@@ -1,0 +1,62 @@
+# Python 3.11 Requirements with Full GPU Support
+# Install Order: Core packages first, then GPU packages
+
+# ===== CORE ML PACKAGES =====
+numpy>=1.21.0,<2.0
+pandas>=1.3.0
+scikit-learn>=1.0.0
+scipy>=1.7.0
+
+# ===== NLP PACKAGES =====
+nltk>=3.6
+spacy>=3.4.0
+# spaCy GPU support (choose ONE based on your CUDA version)
+spacy[cuda11x]
+
+# ===== GPU-ACCELERATED ML =====
+xgboost[gpu]>=1.6.0       # XGBoost with GPU support
+# cuml>=22.12.0           # GPU scikit-learn (optional, advanced)
+# cudf>=22.12.0           # GPU pandas (optional, advanced)
+
+# ===== DEEP LEARNING (GPU) =====
+torch>=1.13.0             # PyTorch with CUDA
+torchaudio>=0.13.0        # Audio processing
+torchvision>=0.14.0       # Computer vision
+transformers>=4.21.0      # Hugging Face transformers
+accelerate>=0.20.0        # Distributed training
+datasets>=2.0.0           # Datasets library
+
+# ===== VISUALIZATION =====
+matplotlib>=3.5.0
+seaborn>=0.11.0
+plotly>=5.10.0            # Interactive plots
+wordcloud>=1.9.0          # Text visualization
+
+# ===== JUPYTER & DEVELOPMENT =====
+jupyter>=1.0.0
+ipykernel>=6.15.0
+notebook>=6.4.0
+jupyterlab>=3.4.0
+
+# ===== PERFORMANCE & OPTIMIZATION =====
+numba>=0.56.0             # JIT compilation with GPU support
+# rapids-cudf>=22.12.0    # RAPIDS ecosystem (advanced GPU)
+# rapids-cuml>=22.12.0    # RAPIDS ML (advanced GPU)
+
+# ===== DEVELOPMENT TOOLS =====
+pytest>=7.0.0
+black>=22.0.0
+flake8>=5.0.0
+ipython>=8.0.0
+
+# ===== OPTIONAL ADVANCED GPU =====
+# faiss-gpu>=1.7.0        # Facebook AI Similarity Search (GPU)
+# cupy>=10.0.0            # GPU NumPy alternative
+
+# ===== INSTALLATION NOTES =====
+# 1. Make sure you have CUDA installed first
+# 2. Install in this order:
+#    pip install -r requirements_gpu.txt
+# 3. Download spaCy model:
+#    python -m spacy download en_core_web_sm
+# 4. Test GPU with: python test_gpu_setup.py

@@ -5,19 +5,19 @@ Loads data, preprocesses text, engineers features, trains models,
 performs evaluation, diagnostics, builds ensemble, and writes submission.
 """
 import os
-from data_loading import load_data
-from text_preprocessing import preprocess_dataframe
-from feature_engineering import build_features
-from model_training import train_models
-from evaluation import evaluate_models, calibrate_model
 from diagnostics import (
     plot_learning_curve,
     holdout_evaluation,
     plot_calibration_curve,
     print_confusion_report
 )
-from ensembling import ensemble_predictions
-from submission import make_submission
+from src.data_loading import load_data
+from src.ensembling import ensemble_predictions
+from src.evaluation import evaluate_models, calibrate_model
+from src.feature_engineering import build_features
+from src.model_training import train_models
+from src.submission import make_submission
+from src.text_preprocessing import preprocess_dataframe
 
 
 def main(data_dir: str, output_dir: str):

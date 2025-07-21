@@ -3,4 +3,5 @@
   <component name="Black">
     <option name="sdkName" value="Python 3.13 (KraggleMLCompetition-Identify-The-Author)" />
   </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.11 (Identify-the-author)" project-jdk-type="Python SDK" />
 </project>
