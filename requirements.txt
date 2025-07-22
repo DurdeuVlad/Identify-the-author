@@ -1,6 +1,6 @@
-# requirements_no_tensorflow.txt
-# Clean setup for Identify the Author competition
-# Focus: PyTorch + XGBoost + Scikit-learn
+# requirements.txt - TensorFlow-Free Competition Setup
+# Optimized for "Identify the Author" Kaggle competition
+# Stack: PyTorch + XGBoost + Scikit-learn (NO TENSORFLOW)
 
 # ===== CORE ML PACKAGES =====
 numpy>=1.21.0,<2.0
@@ -8,24 +8,25 @@ pandas>=1.3.0
 scikit-learn>=1.0.0
 scipy>=1.7.0
 
-# ===== PYTORCH (BERT ALTERNATIVE) =====
+# ===== PYTORCH STACK (BERT Alternative) =====
 torch>=2.1.0
-torchaudio>=2.1.0
 torchvision>=0.16.0
+torchaudio>=2.1.0
 
 # ===== TRANSFORMERS (PYTORCH BACKEND) =====
 transformers>=4.21.0
 accelerate>=0.20.0
 datasets>=2.0.0
 
-# ===== GPU-ACCELERATED ML =====
+# ===== GRADIENT BOOSTING =====
 xgboost>=1.6.0
+lightgbm>=3.3.0
 
 # ===== NLP PACKAGES =====
 nltk>=3.6
 spacy>=3.4.0
 
-# ===== COMPETITION ESSENTIALS =====
+# ===== VISUALIZATION & ANALYSIS =====
 matplotlib>=3.5.0
 seaborn>=0.11.0
 plotly>=5.10.0
@@ -44,8 +45,14 @@ pytest>=7.0.0
 black>=22.0.0
 ipython>=8.0.0
 
-# ===== COMPETITION STRATEGY =====
-# 1. PyTorch for modern neural models (BERT alternatives)
-# 2. XGBoost for gradient boosting (GPU accelerated if available)
-# 3. Scikit-learn for TF-IDF and traditional ML
-# 4. NO TensorFlow = NO circular import issues!
+# ===== COMPETITION NOTES =====
+# ✅ PyTorch for modern neural models (BERT, embeddings)
+# ✅ XGBoost for gradient boosting (GPU accelerated)
+# ✅ Scikit-learn for TF-IDF and traditional ML
+# 🚫 NO TensorFlow = NO dependency conflicts!
+#
+# Expected Performance:
+# - TF-IDF + LogReg: ~0.35-0.40 log-loss
+# - PyTorch BERT: ~0.30-0.35 log-loss
+# - XGBoost: ~0.32-0.38 log-loss
+# - Ensemble: <0.30 log-loss target
